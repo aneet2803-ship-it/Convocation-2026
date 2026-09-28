@@ -1,4 +1,6 @@
-// Replace these dummy filenames with the EXACT filenames of your original photographs.
+// GJIMT Convocation 2026
+// Gallery image manifest
+
 window.GALLERY_DATA = {
   vc: [
     "VC_001.JPG",
@@ -22,6 +24,7 @@ window.GALLERY_DATA = {
     "VC_019.JPG",
     "VC_020.JPG"
   ],
+
   registrar: [
     "REG_001.jpg",
     "REG_002.jpg",
@@ -36,9 +39,10 @@ window.GALLERY_DATA = {
     "REG_011.jpg",
     "REG_012.jpg"
   ],
+
   meritorious: [
     "Meritorious_001.JPG",
-	"Meritorious_002.JPG",
+    "Meritorious_002.JPG",
     "Meritorious_003.JPG",
     "Meritorious_004.JPG",
     "Meritorious_005.JPG",
@@ -48,6 +52,5 @@ window.GALLERY_DATA = {
     "Meritorious_009.JPG",
     "Meritorious_010.JPG",
     "Meritorious_011.JPG"
-	
   ]
 };
