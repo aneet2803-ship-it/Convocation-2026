@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><title>Manifest Test</title>
+<script src="manifest.js"></script>
+<pre id="out"></pre>
+<script>
+document.getElementById('out').textContent =
+  window.GALLERY_DATA ? JSON.stringify(window.GALLERY_DATA,null,2) :
+  'ERROR: manifest.js did not load';
+</script>

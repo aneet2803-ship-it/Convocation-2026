@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GJIMT Convocation 2026 | Official Gallery</title>
+<style>
+:root{--orange:#e95420;--orange2:#ff7a2f;--ink:#24272d;--muted:#6d727b;--glass:rgba(255,255,255,.82);--shadow:0 24px 70px rgba(28,32,40,.18)}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 82% 10%,#ffe3d2 0,transparent 28%),radial-gradient(circle at 15% 85%,#e7ebef 0,transparent 32%),linear-gradient(135deg,#f8f9fb,#fff7f2);min-height:100vh}
+.shell{display:grid;grid-template-columns:260px 1fr;min-height:100vh}.sidebar{padding:26px 18px;background:rgba(30,33,38,.96);color:white;position:sticky;top:0;height:100vh;box-shadow:12px 0 45px rgba(0,0,0,.12)}
+.brand-mini{display:flex;align-items:center;gap:10px;margin-bottom:36px}.brand-mini img{width:64px;background:#fff;border-radius:12px;padding:4px}.brand-mini b{font-size:14px;line-height:1.3}.nav-title{font-size:11px;letter-spacing:1.8px;color:#aeb4bd;margin:8px 10px 12px}.nav button{width:100%;border:0;background:transparent;color:#e9ebee;text-align:left;padding:14px 14px;margin:7px 0;border-radius:14px;font-size:15px;cursor:pointer;transition:.25s}.nav button:hover,.nav button.active{background:linear-gradient(135deg,var(--orange),var(--orange2));transform:translateX(5px);box-shadow:0 12px 28px rgba(233,84,32,.3)}
+.side-note{position:absolute;bottom:22px;left:18px;right:18px;font-size:11px;line-height:1.5;color:#9da3ac}.main{padding:28px 34px 55px}.hero{position:relative;overflow:hidden;background:var(--glass);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:26px 28px;box-shadow:var(--shadow);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;gap:24px}.hero:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;right:-70px;top:-100px;background:linear-gradient(135deg,#ffb184,var(--orange));opacity:.18}.logos{display:flex;align-items:center;gap:18px}.logos img.main-logo{max-width:340px;width:42vw;height:105px;object-fit:contain;background:#fff;border-radius:16px;padding:8px}.logos img.anniv{width:100px;height:100px;object-fit:contain}.hero h1{margin:0 0 8px;font-size:clamp(24px,3vw,42px)}.hero p{margin:0;color:var(--muted)}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:30px 4px 18px}.toolbar h2{margin:0}.count{color:var(--muted);font-size:14px}.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:700;cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{color:#fff;background:linear-gradient(135deg,var(--orange),var(--orange2));box-shadow:0 10px 24px rgba(233,84,32,.28)}.secondary{background:#f0f1f3;color:#333}.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:20px}.card{background:rgba(255,255,255,.9);border:1px solid #fff;border-radius:20px;overflow:hidden;box-shadow:0 14px 38px rgba(30,33,38,.1);transition:.3s;transform-style:preserve-3d}.card:hover{transform:translateY(-7px) rotateX(1deg);box-shadow:0 24px 48px rgba(30,33,38,.16)}.photo-stage{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#f8eee8,#fff);overflow:hidden}
+.photo-stage:before{content:"";position:absolute;width:165px;height:165px;border-radius:50%;right:-58px;top:-75px;background:linear-gradient(135deg,var(--orange),var(--orange2));z-index:0}
+.photo-stage:after{content:"";position:absolute;width:155px;height:155px;border-radius:50%;left:-70px;bottom:-92px;background:#353940;z-index:0}
+.photo-frame{position:absolute;inset:28px 28px 24px;background:white;border:1px solid #dfe2e6;border-radius:14px;overflow:hidden;box-shadow:0 7px 18px rgba(30,33,38,.08);z-index:1}
+.photo-frame img{width:100%;height:100%;object-fit:contain;background:#fff;display:block}.card-body{padding:13px}.filename{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:13px;margin-bottom:10px}.actions{display:flex;gap:9px}.actions .btn{flex:1;padding:9px 10px;font-size:12px}
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;background:rgba(255,255,255,.65);border:2px dashed #d8dbe0;border-radius:22px;color:#777}.modal{position:fixed;inset:0;background:rgba(15,17,20,.72);display:none;align-items:center;justify-content:center;padding:20px;z-index:50;backdrop-filter:blur(8px)}.modal.show{display:flex}.dialog{width:min(430px,100%);background:white;border-radius:24px;padding:28px;box-shadow:0 30px 90px rgba(0,0,0,.35)}.dialog h3{margin:0 0 8px}.dialog p{color:#6c7078;font-size:14px}.dialog input{width:100%;padding:14px;border:1px solid #d7d9de;border-radius:12px;font-size:16px;margin:8px 0 13px;outline:none}.dialog input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(233,84,32,.12)}.modal-actions{display:flex;gap:10px;justify-content:flex-end}.error{min-height:18px;color:#c83232;font-size:12px}.viewer{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:60;display:none;align-items:center;justify-content:center}.viewer.show{display:flex}.viewer img{max-width:92vw;max-height:88vh;object-fit:contain}.viewer .close{position:absolute;right:25px;top:20px;color:white;font-size:35px;cursor:pointer}
+@media(max-width:780px){.shell{grid-template-columns:1fr}.sidebar{height:auto;position:relative;padding:14px}.brand-mini{margin-bottom:12px}.nav{display:flex;gap:8px}.nav button{margin:0}.side-note{display:none}.main{padding:16px}.hero{display:block}.logos{flex-wrap:wrap}.logos img.main-logo{width:100%;max-width:100%;height:auto}.toolbar{align-items:flex-start;flex-direction:column}.gallery{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}}
+</style>
+</head><body>
+<div class="shell"><aside class="sidebar"><div class="brand-mini"><img src="assets/gjimt-logo.png" alt="GJIMT"><b>GJIMT<br>Convocation 2026</b></div><div class="nav-title">OFFICIAL GALLERIES</div><div class="nav"><button id="nav-vc" class="active" onclick="switchGallery('vc')">Vice-Chancellor</button><button id="nav-registrar" onclick="switchGallery('registrar')">Registrar</button><button id="nav-meritorious" onclick="switchGallery('meritorious')">Meritorious Students</button></div><div class="side-note">Official institutional gallery<br>Gian Jyoti Institute of Management & Technology</div></aside>
+<main class="main"><section class="hero"><div><h1>Convocation 2026</h1><p>Official Photograph Gallery • Private Distribution Portal</p></div><div class="logos"><img class="main-logo" src="assets/gjimt-logo.png" alt="GJIMT and NAAC"><img class="anniv" src="assets/25-years-logo.png" alt="25 Years"></div></section>
+<div class="toolbar"><div><h2 id="galleryTitle">Vice-Chancellor Gallery</h2><div class="count" id="count"></div></div><button class="btn primary" onclick="requestDownloadAll()">⬇ Download All Images</button></div><section class="gallery" id="gallery"></section></main></div>
+<div class="modal" id="passwordModal"><div class="dialog"><h3>Protected Download</h3><p>Enter the authorized password to continue.</p><input type="password" id="passwordInput" placeholder="Password" autocomplete="off"><div class="error" id="passwordError"></div><div class="modal-actions"><button class="btn secondary" onclick="closePassword()">Cancel</button><button class="btn primary" onclick="verifyPassword()">Continue</button></div></div></div>
+<div class="viewer" id="viewer"><span class="close" onclick="closeViewer()">×</span><img id="viewerImage" alt="Photograph"></div>
+<script src="manifest.js?v=20260928-final">
+document.addEventListener('DOMContentLoaded',()=>{
+  if(!window.GALLERY_DATA){
+    const g=document.getElementById('gallery');
+    if(g) g.innerHTML='<div class="empty"><strong>Gallery data could not be loaded.</strong><br>Please keep manifest.js in the same folder as index.html.</div>';
+  }
+});
+
+</script>
+<script src="downloads-data.js?v=final"></script>
+<script>
+const DATA = (window.GALLERY_DATA && typeof window.GALLERY_DATA === 'object') ? window.GALLERY_DATA : {vc:[], registrar:[], meritorious:[]};
+
+let current='vc', pending=null;
+const PASSWORD='GJIMT@2026';
+function files(){return (window.GALLERY_DATA&&window.GALLERY_DATA[current])||[]}
+function switchGallery(type){current=type;document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));document.getElementById('nav-'+type).classList.add('active');const titles={vc:'Vice-Chancellor Gallery',registrar:'Registrar Gallery',meritorious:'Meritorious Students Gallery'};document.getElementById('galleryTitle').textContent=titles[type]||'Official Gallery';render()}
+function render(){const g=document.getElementById('gallery'),arr=files();document.getElementById('count').textContent=arr.length+' photograph'+(arr.length===1?'':'s');if(!arr.length){g.innerHTML='<div class="empty"><h3>No photographs added yet</h3><p>Add image files to the appropriate folder and list their filenames in <b>manifest.js</b>.</p></div>';return}g.innerHTML=arr.map((f,i)=>`<article class="card"><div class="photo-stage"><div class="photo-frame"><img src="${pathFor(f)}" loading="lazy" alt="Convocation photograph ${i+1}"></div></div><div class="card-body"><div class="actions"><button class="btn secondary" onclick="viewImage('${js(f)}')">View</button><button class="btn primary" onclick="requestDownload('${js(f)}')">Download</button></div></div></article>`).join('')}
+function pathFor(f){return 'images/'+current+'/'+encodeURIComponent(f).replace(/%2F/g,'/')}
+function viewImage(f){document.getElementById('viewerImage').src=pathFor(f);document.getElementById('viewer').classList.add('show')}
+function closeViewer(){document.getElementById('viewer').classList.remove('show')}
+function requestDownload(f){pending={type:'one',file:f,gallery:current};openPassword()}
+function requestDownloadAll(){if(!files().length)return alert('No images are listed in this gallery.');pending={type:'all',gallery:current,files:[...files()]};openPassword()}
+function openPassword(){document.getElementById('passwordInput').value='';document.getElementById('passwordError').textContent='';document.getElementById('passwordModal').classList.add('show');setTimeout(()=>document.getElementById('passwordInput').focus(),80)}
+function closePassword(){document.getElementById('passwordModal').classList.remove('show');pending=null}
+function verifyPassword(){if(document.getElementById('passwordInput').value!==PASSWORD){document.getElementById('passwordError').textContent='Incorrect password. Access denied.';return}document.getElementById('passwordModal').classList.remove('show');if(pending.type==='one')downloadFile(pending.gallery,pending.file);else downloadAll(pending.gallery,pending.files);pending=null}
+function triggerDataDownload(dataUrl,filename){
+  const a=document.createElement('a');
+  a.href=dataUrl;
+  a.download=filename;
+  a.style.display='none';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>a.remove(),1000);
+}
+function downloadFile(g,f){
+  const data=window.EMBEDDED_DOWNLOADS &&
+             window.EMBEDDED_DOWNLOADS[g] &&
+             window.EMBEDDED_DOWNLOADS[g][f];
+  if(!data){
+    alert('This photograph is not available in the downloadable package. Please regenerate downloads-data.js after adding new photographs.');
+    return;
+  }
+  triggerDataDownload(data,f);
+}
+function downloadAll(g,arr){
+  const data=window.GALLERY_ZIPS && window.GALLERY_ZIPS[g];
+  if(!data){
+    alert('No downloadable photographs are available in this gallery.');
+    return;
+  }
+  const names={vc:'Vice-Chancellor',registrar:'Registrar',meritorious:'Meritorious_Students'};
+  triggerDataDownload(data,'GJIMT_Convocation_2026_'+(names[g]||g)+'_Photos.zip');
+}
+function esc(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))} function js(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
+document.getElementById('passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')verifyPassword()});render();
+</script></body></html>
