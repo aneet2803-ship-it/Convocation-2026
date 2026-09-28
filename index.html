@@ -23,7 +23,8 @@
 <div class="toolbar"><div><h2 id="galleryTitle">Vice-Chancellor Gallery</h2><div class="count" id="count"></div></div><button class="btn primary" onclick="requestDownloadAll()">⬇ Download All Images</button></div><section class="gallery" id="gallery"></section></main></div>
 <div class="modal" id="passwordModal"><div class="dialog"><h3>Protected Download</h3><p>Enter the authorized password to continue.</p><input type="password" id="passwordInput" placeholder="Password" autocomplete="off"><div class="error" id="passwordError"></div><div class="modal-actions"><button class="btn secondary" onclick="closePassword()">Cancel</button><button class="btn primary" onclick="verifyPassword()">Continue</button></div></div></div>
 <div class="viewer" id="viewer"><span class="close" onclick="closeViewer()">×</span><img id="viewerImage" alt="Photograph"></div>
-<script src="manifest.js?v=20260928-final">
+<script src="manifest.js?v=20260928-final"></script>
+<script>
 document.addEventListener('DOMContentLoaded',()=>{
   if(!window.GALLERY_DATA){
     const g=document.getElementById('gallery');
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script src="downloads-data.js?v=final"></script>
 <script>
 const DATA = (window.GALLERY_DATA && typeof window.GALLERY_DATA === 'object') ? window.GALLERY_DATA : {vc:[], registrar:[], meritorious:[]};
@@ -68,14 +70,69 @@ function downloadFile(g,f){
   }
   triggerDataDownload(data,f);
 }
-function downloadAll(g,arr){
-  const data=window.GALLERY_ZIPS && window.GALLERY_ZIPS[g];
-  if(!data){
-    alert('No downloadable photographs are available in this gallery.');
+async function downloadAll(g,arr){
+  if(typeof JSZip==='undefined'){
+    alert('ZIP library could not be loaded. Please check your internet connection and try again.');
     return;
   }
-  const names={vc:'Vice-Chancellor',registrar:'Registrar',meritorious:'Meritorious_Students'};
-  triggerDataDownload(data,'GJIMT_Convocation_2026_'+(names[g]||g)+'_Photos.zip');
+
+  const zip=new JSZip();
+  let added=0;
+  const failed=[];
+
+  for(const f of arr){
+    try{
+      // Use the exact gallery path/filename already listed in manifest.js.
+      const url='images/'+g+'/'+encodeURIComponent(f).replace(/%2F/g,'/');
+      const response=await fetch(url,{cache:'no-store'});
+      if(!response.ok) throw new Error('HTTP '+response.status);
+      const blob=await response.blob();
+      zip.file(f,blob);
+      added++;
+    }catch(err){
+      console.error('Could not add to ZIP:',f,err);
+      failed.push(f);
+    }
+  }
+
+  if(!added){
+    alert('Unable to download the photographs. Please check that the image filenames in manifest.js exactly match the files on GitHub.');
+    return;
+  }
+
+  const names={
+    vc:'Vice-Chancellor',
+    registrar:'Registrar',
+    meritorious:'Meritorious_Students'
+  };
+
+  try{
+    const blob=await zip.generateAsync({
+      type:'blob',
+      compression:'DEFLATE',
+      compressionOptions:{level:6}
+    });
+
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;
+    a.download='GJIMT_Convocation_2026_'+(names[g]||g)+'_Photos.zip';
+    a.style.display='none';
+    document.body.appendChild(a);
+    a.click();
+
+    setTimeout(()=>{
+      a.remove();
+      URL.revokeObjectURL(url);
+    },1500);
+
+    if(failed.length){
+      alert('ZIP downloaded, but '+failed.length+' photograph(s) could not be included. Check the browser console for the filenames.');
+    }
+  }catch(err){
+    console.error('ZIP creation failed:',err);
+    alert('Unable to prepare the ZIP file. Please try again.');
+  }
 }
 function esc(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))} function js(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
 document.getElementById('passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')verifyPassword()});render();
