@@ -2,25 +2,25 @@
 window.GALLERY_DATA = {
   vc: [
     "VC_001.JPG",
-    "VC_002.jpg",
-    "VC_003.jpg",
-    "VC_004.jpg",
-    "VC_005.jpg",
-    "VC_006.jpg",
-    "VC_007.jpg",
-    "VC_008.jpg",
-    "VC_009.jpg",
-    "VC_010.jpg",
-    "VC_011.jpg",
-    "VC_012.jpg",
-    "VC_013.jpg",
-    "VC_014.jpg",
-    "VC_015.jpg",
-    "VC_016.jpg",
-    "VC_017.jpg",
-    "VC_018.jpg",
-    "VC_019.jpg",
-    "VC_020.jpg"
+    "VC_002.JPG",
+    "VC_003.JPG",
+    "VC_004.JPG",
+    "VC_005.JPG",
+    "VC_006.JPG",
+    "VC_007.JPG",
+    "VC_008.JPG",
+    "VC_009.JPG",
+    "VC_010.JPG",
+    "VC_011.JPG",
+    "VC_012.JPG",
+    "VC_013.JPG",
+    "VC_014.JPG",
+    "VC_015.JPG",
+    "VC_016.JPG",
+    "VC_017.JPG",
+    "VC_018.JPG",
+    "VC_019.JPG",
+    "VC_020.JPG"
   ],
   registrar: [
     "REG_001.jpg",
@@ -37,17 +37,17 @@ window.GALLERY_DATA = {
     "REG_012.jpg"
   ],
   meritorious: [
-    "Meritorious_001.jpg",
-	"Meritorious_002.jpg",
-    "Meritorious_003.jpg",
-    "Meritorious_004.jpg",
-    "Meritorious_005.jpg",
-    "Meritorious_006.jpg",
-    "Meritorious_007.jpg",
-    "Meritorious_008.jpg",
-    "Meritorious_009.jpg",
-    "Meritorious_010.jpg",
-    "Meritorious_011.jpg"
+    "Meritorious_001.JPG",
+	"Meritorious_002.JPG",
+    "Meritorious_003.JPG",
+    "Meritorious_004.JPG",
+    "Meritorious_005.JPG",
+    "Meritorious_006.JPG",
+    "Meritorious_007.JPG",
+    "Meritorious_008.JPG",
+    "Meritorious_009.JPG",
+    "Meritorious_010.JPG",
+    "Meritorious_011.JPG"
 	
   ]
 };
