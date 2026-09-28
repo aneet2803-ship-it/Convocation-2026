@@ -1,7 +1,7 @@
 // Replace these dummy filenames with the EXACT filenames of your original photographs.
 window.GALLERY_DATA = {
   vc: [
-    "VC_001.jpg",
+    "VC_001.JPG",
     "VC_002.jpg",
     "VC_003.jpg",
     "VC_004.jpg",
